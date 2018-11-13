@@ -21,17 +21,17 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-app.all('/*', function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin: *');
-    res.setHeader('Access-Control-Allow-Credentials: true');
-    res.setHeader('Access-Control-Allow-Methods: GET,HEAD,OPTIONS,POST,PUT');
-    res.setHeader('Access-Control-Allow-Headers: accept, content-type, x-xsrf-token, x-csrf-token, authorization');
-    if (req.method == 'OPTIONS') {
-        res.status(200).end();
-    } else {
-        next();
-    }
-});
+// app.all('/*', function (req, res, next) {
+//     res.setHeader('Access-Control-Allow-Origin: *');
+//     res.setHeader('Access-Control-Allow-Credentials: true');
+//     res.setHeader('Access-Control-Allow-Methods: GET,HEAD,OPTIONS,POST,PUT');
+//     res.setHeader('Access-Control-Allow-Headers: accept, content-type, x-xsrf-token, x-csrf-token, authorization');
+//     if (req.method == 'OPTIONS') {
+//         res.status(200).end();
+//     } else {
+//         next();
+//     }
+// });
 
 app.get('/*', (req, res) => {
     res.render(path.join(__dirname, 'index'));
