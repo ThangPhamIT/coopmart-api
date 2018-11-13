@@ -1,7 +1,7 @@
 var nodemailer = require('nodemailer');
 
 const from = '"Coopmart Mini Test" <coopmart@coopmart.vn>';
-const to = `noreply.it91@gmail.com`;
+const to = `oanhld91@gmail.com`;
 
 function setup() {
     return nodemailer.createTransport({
@@ -66,7 +66,7 @@ function sendEmailSubmitTest(test) {
             <tr>
                 <th>#</th>
                 <th>CÂU HỎI</th>
-                <th>ĐÁP ÁN</th>
+                <th>TRẢ LỜI</th>
             </tr>
             ${bodyEmail}
             </table>
