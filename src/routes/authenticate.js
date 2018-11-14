@@ -6,7 +6,7 @@ const router = express.Router();
 router.post('/', (req, res) => {
     const { credentials } = req.body;
     console.log('User login: ', credentials);
-    User.findOne({ username: credentials.username, department: credentials.department }).then(user => {
+    User.findOne({ username: credentials.username.toUpperCase(), department: credentials.department.toUpperCase() }).then(user => {
         if (user) {
             res.json({ user: user.toAuthJSON() });
         } else {

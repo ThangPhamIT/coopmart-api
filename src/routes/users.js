@@ -8,8 +8,8 @@ const router = express.Router();
 router.post('/', (req, res) => {
     const { user } = req.body;
     console.log('User sign up: ', user);
-    let username = user.username;
-    let department = user. department;
+    let username = user.username.toUpperCase();
+    let department = user. department.toUpperCase();;
     const _user = new User({ username, department });
     _user.setUsernameHash(username);
     _user.save()
